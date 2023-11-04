@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Custom font */
+body, button, input, textarea, h1, h2, h3, h4, h5, h6, a {
+  @apply font-josefin bg-gray-50 text-gray-800;
+}
+
+/* Navbar Styles */
+nav {
+  @apply flex justify-between items-center py-2 px-4 bg-transparent;
+  padding-top: 0.25rem; /* 4px */
+  padding-bottom: 0.25rem; /* 4px */
+}
+
+nav a {
+  @apply text-deep-brown hover:text-gray-600 text-sm no-underline bg-transparent;
+}
+.nav-item {
+  padding: 0.25rem 1rem;
+  font-size: 1rem; /* Adjust the font size as needed */
+}
+
+.svg-logo {
+  position: relative;
+  top: -2rem; 
+  margin: 0 1rem;
+  flex-shrink: 0;
+  height: 2rem;
+}
+
+/* Ensure SVG fills the container but maintains aspect ratio */
+svg {
+  max-width: 100%;
+  height: auto; /* Adjust the height automatically */
+  /* Define your textStyle for SVG text */
+}
+.textStyle {
+  font-size: 1.5rem; /* This should match the nav link font size */
+  /* Add other style properties as needed */
+}
+nav a, .svg-logo {
+  @apply m-0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+/* Header Styles */
+header {
+  @apply bg-gradient-to-r from-beige to-blue-200 text-deep-brown shadow-md;
+}
+
+/* Hero Section */
+.hero {
+  @apply bg-cover bg-center h-screen flex flex-col justify-center items-center text-white bg-transparent;
+  background-image: url('/hero-img.jpg'); /* Replace with your actual hero image path */
+}
+
+.hero h1 {
+  @apply text-5xl font-bold m-0 bg-transparent;
+}
+
+.hero p {
+  @apply text-xl m-0 bg-transparent;
+}
+
+/* Featured Rooms Section */
+.featured-rooms {
+  @apply py-12 bg-gradient-to-b from-blue-200 to-beige;
+}
+
+.featured-rooms h2 {
+  @apply text-4xl font-bold mb-6 text-white text-center m-0 bg-transparent;
+}
+
+.room-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4;
+}
+
+.room {
+  @apply bg-transparent rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300;
+}
+
+.room img {
+  @apply w-full h-64 object-cover;
+}
+
+.room h3 {
+  @apply text-2xl font-semibold my-3 text-white bg-transparent;
+}
+
+.room p {
+  @apply text-base mb-3 text-white bg-transparent;
+}
+
+.room button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300;
+}
+
+/* Footer Styles */
+.footer {
+  @apply bg-blue-200 text-deep-brown py-6 flex flex-col items-center justify-center;
+}
+
+.footer a {
+  @apply text-gray-800 hover:text-deep-brown;
+}
+
+.footer .footer-content {
+  @apply w-full max-w-screen-lg flex flex-wrap justify-between items-center text-center;
+}
+
+.footer .footer-section {
+  @apply mb-4;
+}
+
+.footer p, .footer h3, .footer a {
+  @apply m-0;
+}
+
+.footer h3 {
+  @apply text-lg font-bold;
+}
+
+.footer p {
+  @apply text-xs;
+}
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .navbar {
+    @apply flex-row justify-between items-center py-4 px-8;
+  }
+
+  .footer {
+    @apply flex-row justify-between items-center py-8 px-8;
+  }
+
+  .footer .footer-content {
+    @apply flex-row justify-between items-center;
+  }
+
+  .footer .footer-section {
+    @apply w-1/4 mb-0;
+  }
+
+  .footer .social-icons {
+    @apply flex justify-start items-center space-x-4;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    @apply flex-row justify-between items-center py-3 px-6;
+  }
+
+  .footer {
+    @apply flex-row justify-between items-center py-6 px-6;
+  }
+
+  .footer .footer-content {
+    @apply flex-row justify-between items-center;
+  }
+
+  .footer .footer-section {
+    @apply w-1/2 mb-0;
+  }
+
+  .footer .social-icons {
+    @apply flex justify-start items-center space-x-3;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    @apply flex-col items-center py-2 px-4;
+  }
+
+  .navbar a {
+    @apply mb-2 text-lg;
+  }
+
+  .footer {
+    @apply flex-col items-center py-4 px-4;
+  }
+
+  .footer .footer-content {
+    @apply flex-col items-center;
+  }
+
+  .footer .footer-section {
+    @apply w-full mb-4;
+  }
+
+  .footer .social-icons {
+    @apply flex justify-center items-center space-x-2;
+  }
+}
